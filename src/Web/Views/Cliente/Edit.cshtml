@@ -1,0 +1,26 @@
+﻿@model ClienteViewModel
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Editar Cliente</h2>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Email">
+
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" asp-for="Nome" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Logotipo</label>
+            <input type="file" class="form-control" asp-for="Logotipo">
+        </div>
+
+        <button type="submit" class="btn btn-warning">Atualizar</button>
+    </form>
+</div>
